@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
+
+
 {% block content %}
-  {% for post in posts.items %} <!-- PAGINATION OBJECT -->
+  {% for post in posts %}
+    {% if post.author != current_user and post.author.id in subs%}
     <article class="media content-section">
       <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
           <div class="media-body">
@@ -10,19 +13,19 @@
               <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
             <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
+            {% if post.image_file%}
+              <p class="article-content more">
+                <img class="post-img" src="{{ url_for('static', filename='post_pics/' + post.image_file) }}">
+                {{ post.content }}
+              </p>
+            {% else %}
+              <p class="article-content more">{{ post.content }}</p>
+            {% endif %}
           </div>
         </article>
-  {% endfor %}
-  {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-    {% if page_num  %}
-      {% if posts.page == page_num  %}
-        <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
-      {% else %}
-        <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
-      {% endif %}
-    {% else %}
-      ...
     {% endif %}
   {% endfor %}
+
+  
+  
 {% endblock %}
