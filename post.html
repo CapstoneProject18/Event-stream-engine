@@ -14,7 +14,14 @@
         {% endif %}
       </div>
       <h2 class="article-title">{{ post.title }}</h2>
-      <p class="article-content">{{ post.content }}</p>
+      {% if post.image_file%}
+              <p class="article-content">
+                <img class="post-img" src="{{ url_for('static', filename='post_pics/' + post.image_file) }}">
+                {{ post.content }}
+              </p>
+            {% else %}
+              <p class="article-content">{{ post.content }}</p>
+            {% endif %}
     </div>
   </article>
   <!-- Modal -->
