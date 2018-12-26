@@ -1,7 +1,13 @@
+os
+secrets
+PIL
 flask
 flask_sqlalchemy
 flask_bcrypt
 flask_login
 flask_mail
 flask_wtf
-PIL 
+wtforms
+datetime
+itsdangerous
+
