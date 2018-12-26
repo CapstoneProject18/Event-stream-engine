@@ -3,3 +3,4 @@ flask_sqlalchemy
 flask_bcrypt
 flask_login
 flask_mail
+from PIL import image
