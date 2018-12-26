@@ -1,4 +1,3 @@
-os
 flask
 flask_sqlalchemy
 flask_bcrypt
