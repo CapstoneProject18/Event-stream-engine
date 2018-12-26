@@ -4,4 +4,4 @@ flask_bcrypt
 flask_login
 flask_mail
 flask_wtf
-PIL 4.0.0
+PIL 
