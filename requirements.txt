@@ -1,6 +1,3 @@
-os
-secrets
-PIL
 flask
 flask_sqlalchemy
 flask_bcrypt
@@ -10,4 +7,6 @@ flask_wtf
 wtforms
 datetime
 itsdangerous
-
+os
+secrets
+PIL
