@@ -7,6 +7,6 @@ flask_wtf
 wtforms
 datetime
 itsdangerous
-os
+os-win
 secrets
 PIL
