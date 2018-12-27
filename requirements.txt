@@ -8,5 +8,5 @@ wtforms
 datetime
 itsdangerous
 os-win
-secrets
+python-secrets
 PIL
