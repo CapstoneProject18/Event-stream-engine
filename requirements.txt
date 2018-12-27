@@ -9,4 +9,4 @@ datetime
 itsdangerous
 os-win
 python-secrets
-PIL
+python-PIL
