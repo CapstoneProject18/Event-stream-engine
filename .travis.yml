@@ -7,3 +7,8 @@ install:
  - pip install -r requirements.txt
 script:
  - python run.py
+deploy:
+ - provider: pypi
+   user: "Nandini7107"
+   password:
+    secure: "OliverQueen_7"
