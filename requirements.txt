@@ -9,4 +9,5 @@ datetime
 itsdangerous
 os-win
 python-secrets
-pil==1.1.7
+MySQL
+pillow
