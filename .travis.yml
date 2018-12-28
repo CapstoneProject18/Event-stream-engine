@@ -8,7 +8,12 @@ install:
 script:
  - python run.py
 deploy:
- - provider: pypi
-   user: "Nandini7107"
-   password:
-    secure: "OliverQueen_7"
+ - provider: script 
+    script: bash scripts/deploy.sh staging
+    on:
+      branch: develop
+  # deploy master to production
+ - provider: script
+    script: bash scripts/deploy.sh production
+     on:
+      branch: master
